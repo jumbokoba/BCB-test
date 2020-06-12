@@ -16,11 +16,17 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-	String str = L"hello world!";
+	String str_yes = L"hello world!";
+	String str_no = L"bye";
 
-	if( Application->MessageBox( L"yes or no", L"check",  MB_YESNO ) == IDYES )
+	int id = Application->MessageBox( L"yes or no", L"check",  MB_YESNO );
+	if( id == IDYES )
 	{
-		ShowMessage( str );
+		ShowMessage( str_yes );
 	}
+	else if( id == IDNO )
+	{
+		ShowMessage( str_no );
+    }
 }
 //---------------------------------------------------------------------------
